@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Match Puzzle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Start Screen -->
+    <div id="startScreen">
+        <h1>🍓 Fruit Match Puzzle 🍇</h1>
+        <button id="playBtn">Play</button>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="gameScreen" style="display:none;">
+
+        <div class="topBar">
+            <div>⭐ Score: <span id="score">0</span></div>
+            <div>🎯 Moves: <span id="moves">30</span></div>
+        </div>
+
+        <!-- Puzzle Board -->
+        <div id="board"></div>
+
+        <div class="buttons">
+            <button id="restartBtn">Restart</button>
+        </div>
+
+    </div>
+
+    <!-- Game Over Popup -->
+    <div id="gameOver" style="display:none;">
+        <div class="popup">
+            <h2>Game Over</h2>
+            <p>Your Score: <span id="finalScore">0</span></p>
+            <button id="playAgainBtn">Play Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
