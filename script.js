@@ -6,7 +6,11 @@ const scoreText = document.getElementById("score");
 const movesText = document.getElementById("moves");
 
 const fruits = ["🍎", "🍌", "🍇", "🍒", "🍋", "🥝"];
+const levelText = document.getElementById("level");
+const coinsText = document.getElementById("coins");
 
+let level = 1;
+let coins = 0;
 let score = 0;
 let moves = 30;
 let firstCell = null;
@@ -25,7 +29,8 @@ playBtn.onclick = () => {
     score = 0;
     moves = 30;
     firstCell = null;
-
+levelText.textContent = level;
+coinsText.textContent = coins;
     createBoard();
 };
 
@@ -204,7 +209,14 @@ function checkMatches() {
     score += matched.size * 10;
 
     scoreText.textContent = score;
+if (score >= level * 300) {
 
+    document.getElementById("winScore").textContent = score;
+
+    document.getElementById("earnedCoins").textContent = 50;
+
+    document.getElementById("winPopup").style.display = "flex";
+}
 
     // REMOVE + FALL
 
@@ -309,6 +321,29 @@ document.getElementById("playAgainBtn").onclick = () => {
     moves = 30;
     firstCell = null;
     busy = false;
+
+    createBoard();
+};// ===============================
+// NEXT LEVEL
+// ===============================
+
+document.getElementById("nextLevelBtn").onclick = () => {
+
+    document.getElementById("winPopup").style.display = "none";
+
+    level++;
+    coins += 50;
+
+    levelText.textContent = level;
+    coinsText.textContent = coins;
+
+    score = 0;
+    moves = 30;
+    firstCell = null;
+    busy = false;
+
+    scoreText.textContent = score;
+    movesText.textContent = moves;
 
     createBoard();
 };
