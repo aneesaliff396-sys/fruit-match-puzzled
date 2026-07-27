@@ -3,41 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fruit Match Puzzle</title>
+    <title>Fruit Match Puzzle V2</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- Start Screen -->
     <div id="startScreen">
+
         <h1>🍓 Fruit Match Puzzle 🍇</h1>
-        <button id="playBtn">Play</button>
+        <p class="subtitle">Match Fruits • Earn Coins • Unlock Levels</p>
+
+        <button id="playBtn">▶ PLAY</button>
+
     </div>
+
 
     <!-- Game Screen -->
     <div id="gameScreen" style="display:none;">
 
+        <!-- Top Bar -->
         <div class="topBar">
-            <div>⭐ Score: <span id="score">0</span></div>
-            <div>🎯 Moves: <span id="moves">30</span></div>
+
+            <div class="box">
+                🏆<br>
+                <span id="level">1</span>
+                <small>LEVEL</small>
+            </div>
+
+            <div class="box">
+                ⭐<br>
+                <span id="score">0</span>
+                <small>SCORE</small>
+            </div>
+
+            <div class="box">
+                🎯<br>
+                <span id="moves">30</span>
+                <small>MOVES</small>
+            </div>
+
+            <div class="box">
+                🪙<br>
+                <span id="coins">0</span>
+                <small>COINS</small>
+            </div>
+
         </div>
 
         <!-- Puzzle Board -->
         <div id="board"></div>
 
+        <!-- Buttons -->
         <div class="buttons">
-            <button id="restartBtn">Restart</button>
+
+            <button id="restartBtn">🔄 Restart</button>
+
+            <button id="pauseBtn">⏸ Pause</button>
+
         </div>
 
     </div>
 
-    <!-- Game Over Popup -->
-    <div id="gameOver" style="display:none;">
+
+    <!-- Level Complete -->
+    <div id="winPopup" style="display:none;">
+
         <div class="popup">
-            <h2>Game Over</h2>
-            <p>Your Score: <span id="finalScore">0</span></p>
-            <button id="playAgainBtn">Play Again</button>
+
+            <h2>🎉 Level Complete!</h2>
+
+            <p>
+                Score :
+                <span id="winScore">0</span>
+            </p>
+
+            <p>
+                Coins Earned :
+                <span id="earnedCoins">50</span>
+            </p>
+
+            <button id="nextLevelBtn">
+                ▶ Next Level
+            </button>
+
         </div>
+
+    </div>
+
+
+    <!-- Game Over -->
+    <div id="gameOver" style="display:none;">
+
+        <div class="popup">
+
+            <h2>😢 Game Over</h2>
+
+            <p>
+                Final Score :
+                <span id="finalScore">0</span>
+            </p>
+
+            <button id="playAgainBtn">
+                🔄 Play Again
+            </button>
+
+        </div>
+
     </div>
 
     <script src="script.js"></script>
